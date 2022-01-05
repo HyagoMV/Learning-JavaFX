@@ -1,0 +1,5 @@
+--module-path <jmods>
+--add-modules javafx.controls,javafx.fxml
+--main-jar <example_jar>
+--input <example_jar_dir>
+--dest <output_exe>
