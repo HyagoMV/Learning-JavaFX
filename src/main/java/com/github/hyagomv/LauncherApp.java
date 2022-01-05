@@ -1,6 +1,8 @@
 package com.github.hyagomv;
 
-public class Launcher extends App {
+import com.github.hyagomv.application.App;
+
+public class LauncherApp extends App {
 	
 	public static void main(String[] args) {
 		App.launch(args);
