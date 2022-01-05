@@ -1,62 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project 
 	xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-	  					https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>com.github.hyagomv</groupId>
-  <artifactId>learning-maven</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <packaging>jar</packaging>
-  
-  <properties>
-  	<java.version>17</java.version>
-  	<java.encoding>UTF-8</java.encoding>
-  </properties>
-  
-  <dependencies>
-	<dependency>
-		<groupId>org.junit.jupiter</groupId>
-		<artifactId>junit-jupiter-engine</artifactId>
-		<version>5.8.2</version>
-		<scope>test</scope>
-	</dependency>
-  </dependencies>
-  
-  <build>
-  	<finalName>learning</finalName>
-  	
-  	<plugins>
-  		<!-- Phases: compile | Maven Compiler -->
-  		<plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
-          <configuration>
-          	<source>${java.version}</source>
-          	<target>${java.version}</target>
-          	<encoding>${java.encoding}</encoding>
-          </configuration>
-  		</plugin>
-  		
-  		<!-- Phases: test | Maven Surefire -->
-  		<plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M5</version>
-          <configuration>
-          	<encoding>${java.encoding}</encoding>
-          </configuration>
-  		</plugin>
-  		
-  		<!-- Phases: package | Maven JAR -->
-  		<plugin>
-        	<groupId>org.apache.maven.plugins</groupId>
-        	<artifactId>maven-jar-plugin</artifactId>
-        	<version>3.2.0</version>
-  		</plugin>
-  	</plugins>
-  </build>
+	 					https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.hyagomv</groupId>
+	<artifactId>learning-maven</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<!-- Maven Compile Plugin-->
+		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<java.version>17</java.version>
+
+		<!-- JavaFx Dependency -->
+		<javafx.version>17.0.1</javafx.version>
+
+		<!-- JUnit-->
+		<junit.version>5.8.2</junit.version>
+
+		<!-- Maven Compile & Surefire Plugin -->
+		<java.encoding>UTF-8</java.encoding>
+
+		<!-- Maven JAR Plugin -->
+		<maven.jar.version>3.2.0</maven.jar.version>
+		<maven.jar.archive.manifest.mainClass>com.github.hyagomv.App</maven.jar.archive.manifest.mainClass>
+
+		<!--Mave Sufefire -->
+		<maven.surefire.version>3.0.0-M5</maven.surefire.version>
+	</properties>
+
+	<dependencies>
+		<!-- JavaFx: Controls -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>${javafx.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- JavaFx: FXML -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>${javafx.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>learning</finalName>
+
+		<plugins>
+			<!-- Phases: compile | Maven Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<release>${java.version}</release>
+					<encoding>${java.encoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- Phases: test | Maven Surefire -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<configuration>
+					<encoding>${java.encoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- Phases: package | Maven JAR -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven.jar.version}</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>${maven.jar.archive.manifest.mainClass}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

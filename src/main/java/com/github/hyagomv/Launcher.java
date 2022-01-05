@@ -1,9 +1,9 @@
 package com.github.hyagomv;
 
-public class Main {
-
+public class Launcher extends App {
+	
 	public static void main(String[] args) {
-		System.out.println("Hello World");
+		App.launch(args);
 	}
-
+	
 }
