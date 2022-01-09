@@ -25,6 +25,7 @@ public class App extends Application {
 		stage.getIcons().add(new Image("icon.png"));
 		stage.setTitle("Title");
 		stage.setScene(scene);
+		stage.centerOnScreen();
 		stage.show();
 	}
 
