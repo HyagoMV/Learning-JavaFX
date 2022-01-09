@@ -7,6 +7,6 @@
 <AnchorPane minHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.hyagomv.application.controller.HomeController">
    <children>
       <Label layoutX="386.0" layoutY="292.0" text="%label.wellcome" />
-      <Button fx:id="btnAbout" layoutX="404.0" layoutY="328.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="aboutButton" layoutX="404.0" layoutY="328.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>
